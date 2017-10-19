@@ -41,3 +41,6 @@ Route::get('/usercontroller/path','UserController@showPath')->middleware('first'
 
 //Resource controller
 Route::resource('photo','PhotoController');
+
+//retrieving the request uri
+Route::get('/foo/bar', 'UriController@index');
