@@ -30,3 +30,14 @@ Route::get('/user/{name?}', function($name = 'Luke'){
 //Route redirect demo
 Route::redirect('/redirect','/',301);
 
+//Middleware and controller demo
+Route::get('role', 'TestController@index')->middleware('role:editor');
+
+//Terminable Middleware
+Route::get('terminate', 'ABCController@index')->middleware('terminate');
+
+//utilizing two middleware demo
+Route::get('/usercontroller/path','UserController@showPath')->middleware('first','second');
+
+//Resource controller
+Route::resource('photo','PhotoController');
