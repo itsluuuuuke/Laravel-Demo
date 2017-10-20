@@ -88,3 +88,6 @@ Route::get('/test2',function(){
 Route::get('blade',function(){
 	return view('page');
 });
+
+//database demo
+Route::get('database','DbController@index');
