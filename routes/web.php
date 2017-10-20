@@ -97,3 +97,17 @@ Route::get('form',function(){
 	return view('form');
 });
 Route::post('form/submit','FormController@postFormInfo');
+
+//validation demo
+Route::get('/validation','ValidationController@showForm');
+Route::post('/validation','ValidationController@validateForm');
+
+//file upload demo
+Route::get('/uploadfile','UploadFileController@index');
+Route::post('/uploadfile','UploadFileController@showUploadFile');
+
+//ajax demo 
+Route::get('ajax',function(){
+	return view('message');
+});
+Route::post('/getmsg','AjaxController@index');
