@@ -91,3 +91,9 @@ Route::get('blade',function(){
 
 //database demo
 Route::get('database','DbController@index');
+
+//laravelcollective demo
+Route::get('form',function(){
+	return view('form');
+});
+Route::post('form/submit','FormController@postFormInfo');
