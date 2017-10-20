@@ -44,3 +44,47 @@ Route::resource('photo','PhotoController');
 
 //retrieving the request uri
 Route::get('/foo/bar', 'UriController@index');
+
+//set view
+Route::get('/register',function(){
+	return view('register');
+});
+//retrieve input
+Route::post('/user/register','UserRegistration@postRegister');
+
+//set and get cookies
+Route::get('/cookie/set','CookieController@setCookie');
+Route::get('/cookie/get','CookieController@getCookie');
+
+//basic response
+Route::get('/basic_response',function(){
+	return 'Hello Response';
+});
+
+//attaching headers and cookies
+Route::get('/header',function(){
+	return response('Hello',200)
+		->header('Content-Type','text/html')
+		->cookie('name','Luke');
+});
+
+//JSON response 
+//case sensative!
+Route::get('JSON',function(){
+	return response()->json(['name' => 'Luke', 'city' => 'Guangzhou']);
+});
+
+//view demo
+Route::get('/test',function(){
+	//return view('test', ['name' => 'Luke']); //passing data to a view
+	return view('test');
+});
+Route::get('/test2',function(){
+	//return view('test', ['name' => 'Luke']); //passing data to a view
+	return view('test2');
+});
+
+//blade template demo
+Route::get('blade',function(){
+	return view('page');
+});
